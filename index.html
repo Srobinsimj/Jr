@@ -3,234 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIB Soccer | The Premier Liberian League</title>
+    <title>LIB Soccer | The Professional Heart of Liberian Football</title>
     
-    <link rel="stylesheet" href="styles.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* Resets and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --lib-blue: #001233;
+            --lib-gold: #ffd700;
+            --lib-red: #bf0a30;
+            --glass: rgba(255, 255, 255, 0.1);
         }
 
-        body {
-            line-height: 1.6;
+        /* 1. CENTER CONTENT & 2. BACKGROUND COLOR */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: #000411; 
+            color: #ffffff; 
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
         }
 
-        .highlight-container {
-            background-color: #0b0e14; /* Dark UEFA-style background */
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
+        /* 3. CONTAINERS (At least 5) */
+        .header-container { width: 100%; background: var(--lib-blue); border-bottom: 3px solid var(--lib-red); padding: 20px 5%; position: sticky; top: 0; z-index: 100; }
+        .hero-container { width: 100%; padding: 100px 5%; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=1200'); background-size: cover; background-position: center; }
+        .player-spotlight-container { width: 100%; max-width: 1200px; padding: 50px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+        .standings-container { width: 100%; background: #0b0e14; padding: 60px 5%; display: flex; flex-direction: column; align-items: center; }
+        .footer-container { width: 100%; background: #000; padding: 40px 5%; text-align: center; border-top: 5px solid var(--lib-blue); }
+
+        /* UI Elements */
+        .player-card { background: var(--glass); border: 2px solid var(--lib-gold); border-radius: 20px; padding: 30px; display: flex; align-items: center; gap: 30px; max-width: 800px; }
+        .lib-table { width: 100%; max-width: 1000px; border-collapse: collapse; margin-top: 30px; border: 2px solid #333; }
+        .lib-table th, .lib-table td { padding: 15px; border: 1px solid #333; text-align: center; }
+        .lib-table th { background: var(--lib-blue); color: var(--lib-gold); text-transform: uppercase; }
+        .promo-zone { background: var(--lib-red); font-weight: bold; }
         
-        .text-center {
-            text-align: center;
-        }
-
-        /* Container 1: Header Styling */
-        .header-container {
-            background: linear-gradient(90deg, #001233 0%, #00529F 100%); /* UEFA Blue feel */
-            color: white;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid #ffd700;
-        }
-
-        .header-container h1 {
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .nav-list {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-list li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-list li a:hover {
-            color: #ffd700; /* Gold highlight */
-        }
-
-        /* Container 2: Hero Styling */
-        .hero-container {
-            padding: 60px 20px;
-            background: radial-gradient(circle, #1a2235 0%, #000411 100%);
-        }
-
-        .hero-container h2 {
-            margin: 20px 0;
-            font-size: 2rem;
-        }
-
-        /* Container 3: Media Layout */
-        .media-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .media-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .media-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        blockquote {
-            border-left: 5px solid #00529F;
-            padding-left: 15px;
-            margin: 20px 0;
-            font-style: italic;
-            color: #cccccc;
-            background: #111;
-            padding: 15px;
-        }
-
-        /* List Styling */
-        ul, ol {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-
-        /* Table styling additions */
-        table th, table td {
-            padding: 12px;
-        }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 100%; max-width: 1200px; margin-top: 30px; }
+        .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid #444; }
+        
+        blockquote { font-size: 1.5rem; font-style: italic; border-left: 5px solid var(--lib-gold); padding-left: 20px; margin: 30px 0; }
+        hr { border: 0; height: 1px; background: linear-gradient(to right, transparent, var(--lib-gold), transparent); margin: 20px 0; width: 80%; }
     </style>
 </head>
-<body style="background-color: #000411; color: #ffffff; font-family: Arial, sans-serif;">
+
+<body style="line-height: 1.7; overflow-x: hidden;">
 
     <header class="header-container">
-        <h1>LIB Soccer</h1>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#matches">Matches</a></li>
-                <li><a href="#standings">Standings</a></li>
-            </ul>
-        </nav>
+        <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
+            <h1 style="color: var(--lib-gold); font-weight: 900; letter-spacing: 2px;">LIB SOCCER</h1>
+            <nav>
+                <ul style="list-style: none; display: flex; gap: 30px; font-weight: bold;">
+                    <li>HOME</li>
+                    <li>NEWS</li>
+                    <li>LFA STANDINGS</li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero-container text-center">
-        <p><b>Welcome to the premier destination for all Liberian soccer action.</b></p>
-        
-        <p><u>Experience the passion of the game like never before.</u> <u>Join thousands of fans supporting our local football talent.</u></p>
-        
-        <h2><mark style="background-color: #ffd700; color: #000;">Live Match Today!</mark></h2>
-        
-        <p>Previous Champions: <del>Monrovia Club Breweries</del> | New Record Setters<sub>2025</sub> moving to season<sub>2026</sub>!</p>
+    <section class="hero-container">
+        <h2 style="font-size: 3.5rem; color: #fff; margin-bottom: 10px;">LFA FIRST DIVISION</h2>
+        <p><b>The official home for every highlight and goal in Liberian football.</b></p>
+        <p><u style="text-decoration: underline; text-underline-offset: 8px;">Experience the electric atmosphere of the Samuel Kanyon Doe Stadium.</u></p>
+        <p><u style="text-decoration: underline; text-underline-offset: 8px;">Join thousands of fans in supporting our local stars every weekend.</u></p>
+        <p style="margin-top: 20px;">Current Season Status: Matchday<sub>17</sub> | Year<sup>2026</sup></p>
     </section>
 
-    <section class="media-container highlight-container">
-        <h2>Latest Action</h2>
-        <div class="media-grid">
+    <section class="player-spotlight-container">
+        <div class="player-card">
+            <img src="https://images.unsplash.com/photo-1510563800743-aed236490d08?auto=format&fit=crop&q=80&w=300" alt="Liberian Star" style="border-radius: 10px; border: 3px solid var(--lib-gold);">
             <div>
-                <h3>Match Gallery</h3>
-                <img src="https://images.unsplash.com/photo-1518605368461-1e1e1144bb22?auto=format&fit=crop&w=600&q=80" alt="Liberian Soccer Match" style="width: 100%; border-radius: 8px;">
-            </div>
-            
-            <div>
-                <h3>Match Highlights</h3>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Soccer Highlights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe>
+                <h3 style="color: var(--lib-gold);"><mark style="background: var(--lib-gold); color: black; padding: 2px 10px;">PLAYER OF THE MONTH</mark></h3>
+                <h2 style="font-size: 2rem; margin: 10px 0;">Christopher Jackson</h2>
+                <p>Club: <strong>LISCR FC</strong> | Position: Forward</p>
+                <p><q>Representing my country on the pitch is my greatest honor ever.</q></p>
+                <p>Jackson has scored 12 goals in the 2025-2026 LFA season.<br>
+                   His speed and precision have made him a nightmare for defenders.<br>
+                   He scored a stunning hat-trick against Watanga FC last Sunday.</p>
             </div>
         </div>
 
-        <blockquote>
-            <p><q>Football is the ballet of the masses.</q> - A testament to the beautiful game played in Liberia.</p>
-        </blockquote>
-
-        <p>
-            The Liberian soccer league showcases top talent every single weekend.<br>
-            Watch amazing goals and brilliant tackles from your favorite players.<br>
-            Fans gather across the nation to support their beloved teams.
-        </p>
-
-        <p>The first half of the match was incredibly intense today.</p>
-        <hr>
-        <p>During half time the coach made several brilliant tactical changes.</p>
-        <hr>
-        <p>The final whistle blew with the home team securing victory.</p>
-
-        <p>The upcoming season promises to bring even more unexpected upsets.</p>
-        <p>New sponsorships are helping develop youth academies across the country.</p>
-        <p>Stay tuned to LIB Soccer for the latest daily updates.</p>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80&w=400" alt="Action 1">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=400" alt="Action 2">
+            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&q=80&w=400" alt="Action 3">
+        </div>
     </section>
 
-    <section class="stats-container text-center">
-        <h2>League Standings & Teams</h2>
+    <section class="standings-container">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">LFA OFFICIAL STANDINGS</h2>
         
-        <table border="1" style="margin: 0 auto; width: 80%; border-collapse: collapse; text-align: center; border-color: #333;">
-            <tr style="background-color: #1a2235;">
-                <th>Group / Zone</th>
-                <th>Team Name</th>
-                <th>Played</th>
-                <th>Points</th>
-            </tr>
-            <tr>
-                <td rowspan="3" style="background-color: #0b0e14; font-weight: bold;">Montserrado<br>Division</td>
-                <td>Watanga FC</td>
-                <td>10</td>
-                <td>24</td>
-            </tr>
-            <tr>
-                <td>LISCR FC</td>
-                <td>10</td>
-                <td>21</td>
-            </tr>
-            <tr>
-                <td>Mighty Barrolle</td>
-                <td>10</td>
-                <td>18</td>
-            </tr>
+        <table class="lib-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Club Name</th>
+                    <th>Played</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="4" class="promo-zone">CAF Champions League</td>
+                    <td>LISCR FC</td>
+                    <td>17</td>
+                    <td>38</td>
+                </tr>
+                <tr>
+                    <td>FC Fassell</td>
+                    <td>17</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td>Watanga FC</td>
+                    <td>17</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td>BEA Mountain</td>
+                    <td>17</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td rowspan="10" style="background: #222;">Mid & Relegation</td>
+                    <td>Paynesville FC</td>
+                    <td>17</td>
+                    <td>30</td>
+                </tr>
+                <tr><td>LPRC Oilers</td><td>17</td><td>26</td></tr>
+                <tr><td>Mighty Barrolle</td><td>17</td><td>24</td></tr>
+                <tr><td>Wologizi FC</td><td>17</td><td>23</td></tr>
+                <tr><td>Heaven Eleven</td><td>17</td><td>22</td></tr>
+                <tr><td>Invincible Eleven</td><td>17</td><td>18</td></tr>
+                <tr><td>Borough FC</td><td>17</td><td>15</td></tr>
+                <tr><td>Shaita FC</td><td>17</td><td>12</td></tr>
+                <tr><td>Black Man Warrior</td><td>17</td><td>10</td></tr>
+                <tr><td>Freeport FC</td><td>17</td><td>8</td></tr>
+            </tbody>
         </table>
 
-        <div style="text-align: left; max-width: 600px; margin: 20px auto;">
-            <h3>How to follow the league:</h3>
+        <div style="margin-top: 50px; width: 100%; max-width: 800px;">
+            <h3>League Infrastructure Breakdown:</h3>
             <ol>
-                <li>Register for a free fan account.</li>
-                <li>Select your favorite Liberian teams.</li>
-                <li>Receive instant match alerts weekly.</li>
+                <li>Primary Stadium: Samuel Kanyon Doe (SKD) Complex</li>
+                <li>Secondary Pitch: Antoinette Tubman Stadium (ATS)</li>
+                <li>Youth Division: LFA Under-17 Developmental League</li>
             </ol>
-
-            <h3>Featured Divisions and Teams</h3>
+            
+            <h3 style="margin-top: 20px;">Featured Club Regions:</h3>
             <ul>
-                <li>LFA First Division
+                <li>Montserrado County
                     <ul>
-                        <li>Watanga FC</li>
                         <li>LISCR FC</li>
+                        <li>Watanga FC</li>
+                        <li>LPRC Oilers</li>
                         <li>Mighty Barrolle</li>
                         <li>Invincible Eleven</li>
-                        <li>LPRC Oilers</li>
-                        <li>Nimba United</li>
+                        <li>Paynesville FC</li>
                     </ul>
                 </li>
             </ul>
         </div>
+
+        <hr>
+        <p>The first division trophy is the most coveted in Liberia.</p>
+        <hr>
+        <p>Clubs are now preparing for the intensive second round matches.</p>
+        <hr>
+        <p>Tickets for the derby matches are selling out extremely fast.</p>
+
+        <blockquote>
+            <p>Football is the soul of Liberia, bringing us all together.</p>
+        </blockquote>
     </section>
 
-    <footer class="footer-container text-center" style="padding: 20px; background-color: #050814; margin-top: 40px; border-top: 2px solid #00529F;">
-        <p>&copy; 2026 LIB Soccer Official Website. All rights reserved.</p>
-        <p>Designed with passion for Liberian Football.</p>
+    <footer class="footer-container">
+        <p>&copy; 2026 LIB Soccer | Professional Liberian Soccer Media</p>
+        <p>Monrovia, Republic of Liberia | All Rights Reserved.</p>
+        <p>Status: <del>OFFLINE</del> | <span style="color: #0f0; font-weight: bold;">LIVE</span></p>
     </footer>
 
+    <script>
+        // Professional Java-style (JavaScript) Clock
+        function startClock() {
+            const today = new Date();
+            console.log("LIB Soccer Portal Initialized: " + today);
+        }
+        startClock();
+    </script>
 </body>
 </html>
